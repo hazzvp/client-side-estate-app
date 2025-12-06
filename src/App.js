@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import propertiess from './Data/properties.json';
+import properties from './Data/properties.json';
+
+console.log(properties);
 
 function App() {
   return (
