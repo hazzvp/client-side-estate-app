@@ -1,35 +1,207 @@
 {
-	"properties": [
-        {
-            "id":"prop1",
-			"type":"House",
-            "bedrooms":3,
-			"price":750000,
-			"tenure":"Freehold",
-			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
-			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
-			"picture":"images/prop1pic1small.jpg",
-			"url":"properties/prop1.html",
-            "added": {
-                "month":"October",
-                "day":12,
-                "year":2022
-            }
-        },
-		{
-            "id":"prop2",
-			"type":"Flat",
-            "bedrooms":2,
-			"price":399995,
-			"tenure":"Freehold",
-			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
-			"location":"Crofton Road Orpington BR6",
-			"picture":"images/prop2pic1small.jpg",
-			"url":"properties/prop2.html",
-            "added": {
-                "month":"September",
-                "day":14,
-                "year":2022
-            }
-        }
-]}
+  "properties": [
+    {
+      "id": "prop1",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 750000,
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "picture": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
+      "url": "properties/prop1.html",
+      "added": {
+        "month": "October",
+        "day": 12,
+        "year": 2022
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800",
+        "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.4039,
+      "longitude": 0.0198
+    },
+    {
+      "id": "prop2",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms. This apartment being only five years old, is still under a 10 year building guarantee...",
+      "location": "Crofton Road Orpington BR6",
+      "picture": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800",
+      "url": "properties/prop2.html",
+      "added": {
+        "month": "September",
+        "day": 14,
+        "year": 2022
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800",
+        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800",
+        "https://images.unsplash.com/photo-1502672260066-6bc35f0a1dd1?w=800",
+        "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800",
+        "https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800",
+        "https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=800",
+        "https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.3890,
+      "longitude": 0.0998
+    },
+    {
+      "id": "prop3",
+      "type": "House",
+      "bedrooms": 5,
+      "price": 1250000,
+      "tenure": "Freehold",
+      "description": "A stunning five bedroom detached Victorian house offering spacious and versatile accommodation arranged over three floors. The property features a grand entrance hall, three reception rooms including a formal dining room and family room, a luxury fitted kitchen with island and bi-fold doors to the garden. The first floor comprises a master bedroom suite with dressing room and en-suite, three further double bedrooms and a family bathroom. The second floor has a fifth bedroom and additional storage. Outside there is a beautifully landscaped rear garden extending to approximately 80ft, a detached double garage and driveway parking for multiple vehicles.",
+      "location": "Chislehurst Road, Chislehurst BR7",
+      "picture": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800",
+      "url": "properties/prop3.html",
+      "added": {
+        "month": "November",
+        "day": 5,
+        "year": 2024
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800",
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800",
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800",
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800",
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800",
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800",
+        "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.4170,
+      "longitude": 0.0699
+    },
+    {
+      "id": "prop4",
+      "type": "Flat",
+      "bedrooms": 1,
+      "price": 285000,
+      "tenure": "Leasehold",
+      "description": "A beautifully presented one bedroom apartment located on the second floor of this modern development. The accommodation comprises a spacious open plan living room/kitchen with integrated appliances and Juliet balcony, one double bedroom with built-in wardrobes, and a contemporary bathroom suite. The property benefits from secure entry system, allocated parking space, and communal gardens. Ideally located within walking distance of Bromley South station with excellent transport links to Central London and the M25. The apartment also comes with the remainder of a 10 year NHBC guarantee.",
+      "location": "Station Approach, Bromley BR1",
+      "picture": "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=800",
+      "url": "properties/prop4.html",
+      "added": {
+        "month": "December",
+        "day": 18,
+        "year": 2024
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=800",
+        "https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=800",
+        "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800",
+        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800",
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800",
+        "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800",
+        "https://images.unsplash.com/photo-1585263276897-85c47c6fb1c5?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.4039,
+      "longitude": 0.0163
+    },
+    {
+      "id": "prop5",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 925000,
+      "tenure": "Freehold",
+      "description": "An impressive four bedroom Edwardian family home situated in a sought-after tree-lined road. This charming property retains many original features including high ceilings, decorative coving, and feature fireplaces. The ground floor accommodation comprises entrance hall, two reception rooms, extended kitchen/dining room with doors to garden, and utility room. The first floor offers four well-proportioned bedrooms and a family bathroom. Additional benefits include a loft room suitable for a home office, off-street parking for two cars, and a delightful south-facing rear garden of approximately 60ft. The property is conveniently located close to excellent schools and local amenities.",
+      "location": "Westmoreland Road, Bromley BR2",
+      "picture": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800",
+      "url": "properties/prop5.html",
+      "added": {
+        "month": "October",
+        "day": 28,
+        "year": 2024
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800",
+        "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800",
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800",
+        "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=800",
+        "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800",
+        "https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=800",
+        "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=800",
+        "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.4000,
+      "longitude": 0.0200
+    },
+    {
+      "id": "prop6",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 475000,
+      "tenure": "Leasehold",
+      "description": "A rarely available two bedroom penthouse apartment situated on the top floor of this prestigious modern development. The property boasts a bright and spacious open plan reception room/kitchen with floor to ceiling windows and direct access to a private roof terrace offering stunning views. There are two generous double bedrooms, the master with en-suite shower room, and a luxury family bathroom. Additional features include video entry system, lift access, underground parking, residents' gymnasium, and 24-hour concierge. The development is moments from Shortlands station providing fast links to London Victoria and within easy reach of Bromley town centre.",
+      "location": "Westgate House, Shortlands BR2",
+      "picture": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800",
+      "url": "properties/prop6.html",
+      "added": {
+        "month": "November",
+        "day": 22,
+        "year": 2024
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800",
+        "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=800",
+        "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800",
+        "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
+        "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800",
+        "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800",
+        "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.3990,
+      "longitude": 0.0250
+    },
+    {
+      "id": "prop7",
+      "type": "House",
+      "bedrooms": 6,
+      "price": 1850000,
+      "tenure": "Freehold",
+      "description": "An exceptional six bedroom executive detached residence set within approximately 0.3 acres in one of Bromley's most prestigious private roads. This magnificent family home offers over 3,500 sq ft of luxurious accommodation including a grand reception hall, three reception rooms, a bespoke fitted kitchen/breakfast/family room by a leading designer, separate utility room, and guest cloakroom. The first floor features a stunning master bedroom suite with dressing room and en-suite bathroom, four further double bedrooms (two with en-suites), and a family bathroom. The second floor provides a sixth bedroom/studio. Externally the property boasts beautifully landscaped gardens, a detached triple garage, and extensive driveway parking. Additional features include underfloor heating, smart home technology, and CCTV security system.",
+      "location": "Oakwood Avenue, Bromley BR1",
+      "picture": "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800",
+      "url": "properties/prop7.html",
+      "added": {
+        "month": "December",
+        "day": 10,
+        "year": 2024
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
+        "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800",
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
+        "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800"
+      ],
+      "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+      "latitude": 51.4100,
+      "longitude": 0.0100
+    }
+  ]
+}
