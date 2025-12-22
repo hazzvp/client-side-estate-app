@@ -5,7 +5,8 @@ import SearchPage from './components/SearchPage';
 import PropertyDetail from './components/PropertyDetail';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import Navbar from "./components/Navbar";
+import logo from './logo2.png';
+
 function App() {
   const properties = propertiesData.properties;
 
@@ -42,17 +43,24 @@ function App() {
 
       <div className="App">
         <header className="App-header">
-          <div className="header-content">
-            
-            <h1>Estate Agent Property Search</h1>
-            <h3>Find your next stay</h3>
-            {currentView === 'detail' && (
-              <button onClick={backToSearch} className="back-button">
-                ← Back to Search
-              </button>
-            )}
-          </div>
-        </header>
+  <div className="header-content">
+
+    <div className="logo-title">
+      <img src={logo} alt="Estate Agent Logo" className="app-logo" />
+      <div>
+        <h1>Estate Agent Property Search</h1>
+        <h3>Find your next stay</h3>
+      </div>
+    </div>
+
+    {currentView === 'detail' && (
+      <button onClick={backToSearch} className="back-button">
+        ← Back to Search
+      </button>
+    )}
+  </div>
+</header>
+
 
         <main className="App-main">
           {currentView === 'search' ? (

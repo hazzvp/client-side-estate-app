@@ -12,6 +12,16 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-logo {
+  width: 100px;
+  height: auto;
+}
 
 .App-header {
   background: linear-gradient(135deg, #4cdcae 0%, #6e8b81 100%);
