@@ -5,7 +5,7 @@ import SearchPage from './components/SearchPage';
 import PropertyDetail from './components/PropertyDetail';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-
+import Navbar from "./components/Navbar";
 function App() {
   const properties = propertiesData.properties;
 
@@ -39,10 +39,13 @@ function App() {
 
   return (
     <DndProvider backend={HTML5Backend}>
+
       <div className="App">
         <header className="App-header">
           <div className="header-content">
-            <h1>🏡 Estate Agent Property Search</h1>
+            
+            <h1>Estate Agent Property Search</h1>
+            <h3>Find your next stay</h3>
             {currentView === 'detail' && (
               <button onClick={backToSearch} className="back-button">
                 ← Back to Search
