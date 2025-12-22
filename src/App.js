@@ -43,23 +43,31 @@ function App() {
 
       <div className="App">
         <header className="App-header">
-  <div className="header-content">
+          <div className="header-content">
 
-    <div className="logo-title">
-      <img src={logo} alt="Estate Agent Logo" className="app-logo" />
-      <div>
-        <h1>Estate Agent Property Search</h1>
-        <h3>Find your next stay</h3>
-      </div>
-    </div>
+            {/* Logo on the top-left */}
+            <img
+              src={logo}
+              alt="Estate Agent Logo"
+              className="app-logo-left"
+              onClick={backToSearch}
+            />
 
-    {currentView === 'detail' && (
-      <button onClick={backToSearch} className="back-button">
-        ← Back to Search
-      </button>
-    )}
-  </div>
-</header>
+            
+            <div className="header-text">
+              <h1>Estate Agent Property Search</h1>
+              <h3>Find your next stay</h3>
+            </div>
+
+            {currentView === 'detail' && (
+              <button onClick={backToSearch} className="back-button">
+                ← Back to Search
+              </button>
+            )}
+
+          </div>
+        </header>
+
 
 
         <main className="App-main">

@@ -12,20 +12,33 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.App-header {
+  position: relative;
+  padding: 20px;
 }
 
-.app-logo {
-  width: 100px;
+.app-logo-left {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 185px;
   height: auto;
+  cursor: pointer;
+  border-bottom: 20px;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.header-text h1,
+.header-text h3 {
+  margin: 0;
 }
 
 .App-header {
-  background: linear-gradient(135deg, #4cdcae 0%, #6e8b81 100%);
-  min-height: 70vh;
+  background: linear-gradient(135deg, #65c9a9 0%, #98883b 100%);
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;

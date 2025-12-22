@@ -1,6 +1,10 @@
 import React from 'react';
 import './PropertyDetail.css';
 
+/**
+ * PropertyDetail Component (Basic version)
+ * Will be enhanced with tabs and gallery later
+ */
 const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   if (!property) {
     return <div>Property not found</div>;
@@ -25,21 +29,21 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
         </div>
 
         <div className="detail-location">
-          <span className="location-icon">Location</span>
+          <span className="location-icon">📍</span>
           {property.location}
         </div>
 
         <div className="detail-main-info">
           <div className="info-badge">
-            <span className="badge-icon">Home</span>
+            <span className="badge-icon">🏠</span>
             {property.type}
           </div>
           <div className="info-badge">
-            <span className="badge-icon">Bedrooms</span>
+            <span className="badge-icon">🛏️</span>
             {property.bedrooms} Bedrooms
           </div>
           <div className="info-badge">
-            <span className="badge-icon">Description</span>
+            <span className="badge-icon">📋</span>
             {property.tenure}
           </div>
         </div>
@@ -52,6 +56,38 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           <h2>Description</h2>
           <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
         </div>
+
+        <div>
+            <div className="detail-map">
+                <h2>Location Map</h2>
+                <iframe
+                    title="property-map"
+                    src={`https://www.google.com/maps?q=${encodeURIComponent(
+                    property.location
+                    )}&output=embed`}
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+                </div>
+
+        </div>
+
+        <div className="detail-floorplan">
+        <h2>Floor Plan</h2>
+        {property.floorPlan ? (
+            <img
+            src={property.floorPlan}
+            alt="Floor Plan"
+            className="floorplan-image"
+            />
+        ) : (
+            <p>No floor plan available.</p>
+        )}
+        </div>
+
 
         <div className="detail-added">
           <strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}

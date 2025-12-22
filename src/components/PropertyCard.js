@@ -2,7 +2,12 @@ import React from 'react';
 import { useDrag } from 'react-dnd';
 import './PropertyCard.css';
 
+/**
+ * PropertyCard Component
+ * Individual property card with drag functionality
+ */
 const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) => {
+  // Drag functionality for adding to favorites
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'PROPERTY',
     item: property,
@@ -11,14 +16,23 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
     })
   }));
 
+  /**
+   * Format price with commas
+   */
   const formatPrice = (price) => {
     return `£${price.toLocaleString()}`;
   };
 
+  /**
+   * Format date for display
+   */
   const formatDate = (added) => {
     return `${added.month.substring(0, 3)} ${added.day}, ${added.year}`;
   };
 
+  /**
+   * Extract postcode from location
+   */
   const getPostcode = (location) => {
     const match = location.match(/([A-Z]{1,2}\d{1,2})/);
     return match ? match[0] : '';
@@ -30,6 +44,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
       className={`property-card ${isDragging ? 'dragging' : ''}`}
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
+      {/* Property Image */}
       <div 
         className="property-image" 
         onClick={() => viewProperty(property)}
@@ -37,21 +52,23 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
       >
         <img src={property.picture} alt={property.location} />
         {isFavorite && (
-          <div className="favorite-badge">Favorite</div>
+          <div className="favorite-badge">⭐ Favorite</div>
         )}
       </div>
 
+      {/* Property Content */}
       <div className="property-content">
         <div className="property-price">{formatPrice(property.price)}</div>
-        <div className="property-location">{property.location}</div>
+        <div className="property-location">📍 {property.location}</div>
         
         <div className="property-description">
           {property.description.substring(0, 100)}...
         </div>
 
+        {/* Property Details */}
         <div className="property-details">
           <div className="property-detail-item">
-            <span className="detail-icon"></span>
+            <span className="detail-icon">🏠</span>
             <span>{property.type}</span>
           </div>
           <div className="property-detail-item">
@@ -64,16 +81,18 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
           </div>
         </div>
 
+        {/* Postcode Badge */}
         {getPostcode(property.location) && (
           <div className="postcode-badge">{getPostcode(property.location)}</div>
         )}
 
+        {/* Actions */}
         <div className="property-actions">
           <button
             className="btn-view"
             onClick={() => viewProperty(property)}
           >
-            View Details
+            👁️ View Details
           </button>
           <button
             className={`btn-favorite ${isFavorite ? 'active' : ''}`}
@@ -84,8 +103,9 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
           </button>
         </div>
 
+        {/* Drag Hint */}
         <div className="drag-hint">
-          Drag to favorites or click button
+          💡 Drag to favorites or click button
         </div>
       </div>
     </div>
