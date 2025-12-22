@@ -68,6 +68,22 @@
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
+.detail-map,
+.detail-floorplan,
+.detail-summary {
+  margin-top: 30px;
+}
+
+.detail-summary ul {
+  padding-left: 20px;
+}
+
+.floorplan-image {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 10px;
+}
 
 .info-badge {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

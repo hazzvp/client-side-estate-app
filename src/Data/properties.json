@@ -202,6 +202,23 @@
       "floorPlan": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
       "latitude": 51.4100,
       "longitude": 0.0100
-    }
+    },
+    {
+  "id": 1,
+  "location": "London, UK",
+  "price": 350000,
+  "bedrooms": 2,
+  "type": "Apartment",
+  "tenure": "Freehold",
+  "picture": "/images/property1.jpg",
+  "floorPlan": "/images/floorplan1.png",
+  "description": "A beautiful modern apartment...",
+  "added": {
+    "month": "January",
+    "day": 12,
+    "year": 2025
+  }
+}
+
   ]
 }
