@@ -50,7 +50,10 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
 
         {/* Image Gallery */}
         <div className="detail-image">
-        <img src={property.picture} alt={property.location} />
+        <img 
+            src={`${process.env.PUBLIC_URL}/${property.picture}`} 
+            alt={property.location} 
+        />
         </div>
             {/* Image Gallery */}
         <div className="detail-gallery">

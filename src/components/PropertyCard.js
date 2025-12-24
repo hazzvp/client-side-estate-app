@@ -49,7 +49,16 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
         className="property-image" 
         onClick={() => viewProperty(property)}
         style={{ cursor: 'pointer' }}
+        
       >
+        <img 
+  src={`${process.env.PUBLIC_URL}/${property.picture}`} 
+  alt={property.location}
+  onError={(e) => {
+    console.error('Image failed to load:', property.picture);
+    e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
+  }}
+/>
         <img src={property.picture} alt={property.location} />
         {isFavorite && (
           <div className="favorite-badge">⭐ Favorite</div>

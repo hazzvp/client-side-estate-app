@@ -61,8 +61,11 @@ const FavoritesList = ({
                   style={{ cursor: 'pointer' }}
                 >
                   <div className="favorite-image">
-                    <img src={property.picture} alt={property.location} />
-                  </div>
+                    <img 
+                        src={`${process.env.PUBLIC_URL}/${property.picture}`} 
+                        alt={property.location} 
+                    />
+                    </div>
                   <div className="favorite-info">
                     <h4>{formatPrice(property.price)}</h4>
                     <p className="favorite-location">{property.location.split(',')[0]}</p>
