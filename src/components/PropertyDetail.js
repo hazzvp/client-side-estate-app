@@ -48,9 +48,24 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </div>
         </div>
 
+        {/* Image Gallery */}
         <div className="detail-image">
-          <img src={property.picture} alt={property.location} />
+        <img src={property.picture} alt={property.location} />
         </div>
+            {/* Image Gallery */}
+        <div className="detail-gallery">
+        <h2>Gallery</h2>
+        <div className="gallery-grid">
+            {property.images && property.images.map((img, index) => (
+            <img
+                key={index}
+                src={img}
+                alt={`Property view ${index + 1}`}
+            />
+            ))}
+        </div>
+        </div>
+
 
         <div className="detail-description">
           <h2>Description</h2>
