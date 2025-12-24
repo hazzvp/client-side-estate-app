@@ -60,7 +60,17 @@
 .detail-gallery {
   margin-top: 30px;
 }
+/* Add this to your existing PropertyDetail.css */
 
+.detail-gallery {
+  margin-bottom: 2rem;
+}
+
+.detail-gallery h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

@@ -1,9 +1,10 @@
 import React from 'react';
+import ImageGallery from './ImageGallery';
 import './PropertyDetail.css';
 
 /**
- * PropertyDetail Component (Basic version)
- * Will be enhanced with tabs and gallery later
+ * PropertyDetail Component
+ * Displays full property details with image gallery
  */
 const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   if (!property) {
@@ -11,12 +12,13 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   }
 
   const formatPrice = (price) => {
-    return `£${price.toLocaleString()}`;
+    return `Rs ${price.toLocaleString()}`;
   };
 
   return (
     <div className="property-detail">
       <div className="detail-container">
+        {/* Header with Price and Favorite Button */}
         <div className="detail-header">
           <h1>{formatPrice(property.price)}</h1>
           <button
@@ -28,11 +30,13 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </button>
         </div>
 
+        {/* Location */}
         <div className="detail-location">
           <span className="location-icon">📍</span>
           {property.location}
         </div>
 
+        {/* Property Info Badges */}
         <div className="detail-main-info">
           <div className="info-badge">
             <span className="badge-icon">🏠</span>
@@ -49,64 +53,18 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
         </div>
 
         {/* Image Gallery */}
-        <div className="detail-image">
-        <img 
-            src={`${process.env.PUBLIC_URL}/${property.picture}`} 
-            alt={property.location} 
-        />
-        </div>
-            {/* Image Gallery */}
         <div className="detail-gallery">
-        <h2>Gallery</h2>
-        <div className="gallery-grid">
-            {property.images && property.images.map((img, index) => (
-            <img
-                key={index}
-                src={img}
-                alt={`Property view ${index + 1}`}
-            />
-            ))}
-        </div>
+          <h2>Gallery</h2>
+          <ImageGallery images={property.images} />
         </div>
 
-
+        {/* Description */}
         <div className="detail-description">
           <h2>Description</h2>
           <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
         </div>
 
-        <div>
-            <div className="detail-map">
-                <h2>Location Map</h2>
-                <iframe
-                    title="property-map"
-                    src={`https://www.google.com/maps?q=${encodeURIComponent(
-                    property.location
-                    )}&output=embed`}
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-                </div>
-
-        </div>
-
-        <div className="detail-floorplan">
-        <h2>Floor Plan</h2>
-        {property.floorPlan ? (
-            <img
-            src={property.floorPlan}
-            alt="Floor Plan"
-            className="floorplan-image"
-            />
-        ) : (
-            <p>No floor plan available.</p>
-        )}
-        </div>
-
-
+        {/* Date Added */}
         <div className="detail-added">
           <strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}
         </div>
