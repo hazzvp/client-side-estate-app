@@ -3,7 +3,7 @@ import './ImageGallery.css';
 
 /**
  * ImageGallery Component
- * Displays property images with thumbnail navigation
+ * Displays property images with horizontal thumbnail navigation
  */
 const ImageGallery = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,35 +50,30 @@ const ImageGallery = ({ images }) => {
           }}
         />
         
-        {/* Navigation Arrows */}
-        {images.length > 1 && (
-          <>
-            <button 
-              className="gallery-arrow gallery-arrow-left" 
-              onClick={prevImage}
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <button 
-              className="gallery-arrow gallery-arrow-right" 
-              onClick={nextImage}
-              aria-label="Next image"
-            >
-              ›
-            </button>
-          </>
-        )}
-
         {/* Image Counter */}
         <div className="gallery-counter">
           {currentIndex + 1} / {images.length}
         </div>
       </div>
 
-      {/* Thumbnail Strip */}
-      <div className="gallery-thumbnails">
-        <div className="thumbnails-container">
+      {/* Gallery Title */}
+      <h3 className="gallery-title">Gallery</h3>
+
+      {/* Thumbnail Strip - Single Horizontal Line */}
+      <div className="gallery-thumbnails-wrapper">
+        {/* Left Arrow */}
+        {images.length > 5 && (
+          <button 
+            className="thumbnail-arrow thumbnail-arrow-left" 
+            onClick={prevImage}
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+        )}
+
+        {/* Thumbnails Container */}
+        <div className="gallery-thumbnails">
           {images.map((image, index) => (
             <div
               key={index}
@@ -87,7 +82,7 @@ const ImageGallery = ({ images }) => {
             >
               <img 
                 src={`${process.env.PUBLIC_URL}/${image}`}
-                alt={`Thumbnail ${index + 1}`}
+                alt={`Property view ${index + 1}`}
                 onError={(e) => {
                   e.target.src = 'https://via.placeholder.com/150x100?text=No+Image';
                 }}
@@ -95,6 +90,17 @@ const ImageGallery = ({ images }) => {
             </div>
           ))}
         </div>
+
+        {/* Right Arrow */}
+        {images.length > 5 && (
+          <button 
+            className="thumbnail-arrow thumbnail-arrow-right" 
+            onClick={nextImage}
+            aria-label="Next image"
+          >
+            ›
+          </button>
+        )}
       </div>
     </div>
   );
