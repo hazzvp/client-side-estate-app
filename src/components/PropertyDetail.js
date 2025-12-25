@@ -15,6 +15,8 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
     return `Rs ${price.toLocaleString()}`;
   };
 
+   const galleryImages = property.images ? property.images.slice(1) : [];
+   
   return (
     <div className="property-detail">
       <div className="detail-container">
@@ -52,7 +54,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </div>
         </div>
 
-        {/* Main Property Image */}
+       
         <div className="detail-image">
           <img 
             src={`${process.env.PUBLIC_URL}/${property.picture}`} 
@@ -63,18 +65,17 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           />
         </div>
 
-        {/* Image Gallery Component */}
-        <div className="detail-gallery-section">
-          <ImageGallery images={property.images} />
-        </div>
+        {galleryImages.length > 0 && (
+          <div className="detail-gallery-section">
+            <ImageGallery images={galleryImages} />
+          </div>
+        )}
 
-        {/* Description */}
         <div className="detail-description">
           <h2>Description</h2>
           <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
         </div>
 
-        {/* Location Map */}
         <div className="detail-map">
           <h2>Location Map</h2>
           <iframe
@@ -88,7 +89,6 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           ></iframe>
         </div>
 
-        {/* Floor Plan */}
         <div className="detail-floorplan">
           <h2>Floor Plan</h2>
           {property.floorPlan ? (
@@ -105,7 +105,6 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           )}
         </div>
 
-        {/* Date Added */}
         <div className="detail-added">
           <strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}
         </div>

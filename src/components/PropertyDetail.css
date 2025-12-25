@@ -111,7 +111,41 @@
   display: block;
   margin: 0 auto;
 }
+/* Add to your PropertyDetail.css */
 
+/* Wrapper to center and limit width of main image */
+.detail-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 900px; /* Limit the width - adjust this value */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive - Full width on mobile */
+@media (max-width: 768px) {
+  .detail-image-wrapper {
+    margin: 1rem 0;
+  }
+  
+  .detail-image {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .detail-map iframe {
