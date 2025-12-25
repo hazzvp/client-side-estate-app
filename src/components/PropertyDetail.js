@@ -15,8 +15,9 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
     return `Rs ${price.toLocaleString()}`;
   };
 
-   const galleryImages = property.images ? property.images.slice(1) : [];
-   
+  // Filter out the main image from gallery - show only interior images
+  const galleryImages = property.images ? property.images.slice(1) : [];
+
   return (
     <div className="property-detail">
       <div className="detail-container">
@@ -54,28 +55,33 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </div>
         </div>
 
-       
-        <div className="detail-image">
-          <img 
-            src={`${process.env.PUBLIC_URL}/${property.picture}`} 
-            alt={property.location}
-            onError={(e) => {
-              e.target.src = 'https://via.placeholder.com/800x600?text=Image+Not+Found';
-            }}
-          />
+        {/* Main Property Image - Smaller Width */}
+        <div className="detail-image-wrapper">
+          <div className="detail-image">
+            <img 
+              src={`${process.env.PUBLIC_URL}/${property.picture}`} 
+              alt={property.location}
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/800x600?text=Image+Not+Found';
+              }}
+            />
+          </div>
         </div>
 
+        {/* Image Gallery Component - Interior Images Only */}
         {galleryImages.length > 0 && (
           <div className="detail-gallery-section">
             <ImageGallery images={galleryImages} />
           </div>
         )}
 
+        {/* Description */}
         <div className="detail-description">
           <h2>Description</h2>
           <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
         </div>
 
+        {/* Location Map */}
         <div className="detail-map">
           <h2>Location Map</h2>
           <iframe
@@ -89,6 +95,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           ></iframe>
         </div>
 
+        {/* Floor Plan */}
         <div className="detail-floorplan">
           <h2>Floor Plan</h2>
           {property.floorPlan ? (
@@ -105,6 +112,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           )}
         </div>
 
+        {/* Date Added */}
         <div className="detail-added">
           <strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}
         </div>

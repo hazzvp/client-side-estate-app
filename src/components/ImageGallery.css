@@ -94,11 +94,11 @@
   flex: 1;
 }
 
-/* Individual Thumbnail */
+/* Individual Thumbnail - SMALLER SIZE */
 .thumbnail {
   flex-shrink: 0;
-  width: 150px;
-  height: 100px;
+  width: 100px;   /* Made smaller from 150px */
+  height: 70px;   /* Made smaller from 100px */
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -137,6 +137,21 @@
   pointer-events: none;
 }
 
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+  .thumbnail {
+    width: 90px;   /* Smaller on tablet */
+    height: 65px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .thumbnail {
+    width: 80px;   /* Smaller on mobile */
+    height: 60px;
+  }
+}
 /* Scrollbar Styling */
 .gallery-thumbnails::-webkit-scrollbar {
   height: 8px;
