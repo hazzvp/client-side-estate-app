@@ -65,7 +65,117 @@
 .detail-gallery {
   margin-bottom: 2rem;
 }
+/* Main Image Container with Navigation */
+.detail-image-container {
+  margin: 2rem 0;
+}
 
+.detail-main-image {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.detail-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navigation Arrows */
+.image-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+  padding: 0;
+}
+
+.image-nav-arrow:hover {
+  background-color: rgba(102, 126, 234, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.image-nav-left {
+  left: 20px;
+}
+
+.image-nav-right {
+  right: 20px;
+}
+
+/* Image Counter */
+.image-counter {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 5;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .detail-main-image {
+    height: 450px;
+  }
+
+  .image-nav-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .detail-main-image {
+    height: 350px;
+    border-radius: 8px;
+  }
+
+  .image-nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+
+  .image-nav-left {
+    left: 10px;
+  }
+
+  .image-nav-right {
+    right: 10px;
+  }
+
+  .image-counter {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
 .detail-gallery h2 {
   color: #333;
   font-size: 1.8rem;
@@ -173,12 +283,7 @@
   font-size: 1.rem;
 }
 
-.detail-main-info {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
+
 .detail-map,
 .detail-floorplan,
 .detail-summary {
@@ -196,16 +301,6 @@
   margin-top: 10px;
 }
 
-.info-badge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.75rem 1.0rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-}
 
 .badge-icon {
   font-size: 1.4rem;
@@ -271,11 +366,5 @@
     height: 300px;
   }
 
-  .detail-main-info {
-    flex-direction: column;
-  }
-
-  .info-badge {
-    width: 95.5%;
-  }
+  
 }

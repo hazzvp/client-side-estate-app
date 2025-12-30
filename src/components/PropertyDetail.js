@@ -2,10 +2,6 @@ import React from 'react';
 import ImageGallery from './ImageGallery';
 import './PropertyDetail.css';
 
-/**
- * PropertyDetail Component
- * Displays full property details with image gallery, map, and floor plan
- */
 const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   if (!property) {
     return <div>Property not found</div>;
@@ -15,7 +11,6 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
     return `Rs ${price.toLocaleString()}`;
   };
 
-  // Filter out the main image from gallery - show only interior images
   const galleryImages = property.images ? property.images.slice(1) : [];
 
   return (
@@ -29,30 +24,14 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
             onClick={() => addToFavorites(property)}
             disabled={isFavorite}
           >
-            {isFavorite ? '⭐ Added to Favorites' : '⭐ Add to Favorites'}
+            {isFavorite ? 'Added to Favorites' : 'Add to Favorites'}
           </button>
         </div>
 
         {/* Location */}
         <div className="detail-location">
-          <span className="location-icon">📍</span>
+          <span className="location-icon"></span>
           {property.location}
-        </div>
-
-        {/* Property Info */}
-        <div className="detail-main-info">
-          <div className="info-badge">
-            <span className="badge-icon">🏠</span>
-            {property.type}
-          </div>
-          <div className="info-badge">
-            <span className="badge-icon">🛏️</span>
-            {property.bedrooms} Bedrooms
-          </div>
-          <div className="info-badge">
-            <span className="badge-icon">📋</span>
-            {property.tenure}
-          </div>
         </div>
 
         {/* Main Property Image - Smaller Width */}
@@ -68,7 +47,6 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </div>
         </div>
 
-        {/* Image Gallery Component - Interior Images Only */}
         {galleryImages.length > 0 && (
           <div className="detail-gallery-section">
             <ImageGallery images={galleryImages} />

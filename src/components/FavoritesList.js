@@ -2,24 +2,19 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import './FavoritesList.css';
 
-/**
- * FavoritesList Component
- * Sidebar showing favorite properties with drag & drop
- */
 const FavoritesList = ({
   favorites,
   removeFromFavorites,
   clearFavorites,
   viewProperty
 }) => {
-  // Drop zone for dragging properties
+  
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'PROPERTY',
     drop: (item) => {
-      // Add property when dropped
+     
       if (!favorites.find(fav => fav.id === item.id)) {
-        // This will be handled by parent component through addToFavorites
-        // We just show visual feedback here
+        
       }
     },
     collect: (monitor) => ({
@@ -27,9 +22,6 @@ const FavoritesList = ({
     })
   }));
 
-  /**
-   * Format price with commas
-   */
   const formatPrice = (price) => {
     return `£${price.toLocaleString()}`;
   };

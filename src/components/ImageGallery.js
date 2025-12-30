@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import './ImageGallery.css';
 
-/**
- * ImageGallery Component
- * Displays property images with horizontal thumbnail navigation
- */
 const ImageGallery = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -12,27 +8,18 @@ const ImageGallery = ({ images }) => {
     return <div>No images available</div>;
   }
 
-  /**
-   * Navigate to next image
-   */
   const nextImage = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  /**
-   * Navigate to previous image
-   */
   const prevImage = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
-  /**
-   * Go to specific image
-   */
   const goToImage = (index) => {
     setCurrentIndex(index);
   };
@@ -59,7 +46,6 @@ const ImageGallery = ({ images }) => {
       {/* Gallery Title */}
       <h3 className="gallery-title">Gallery</h3>
 
-      {/* Thumbnail Strip - Single Horizontal Line */}
       <div className="gallery-thumbnails-wrapper">
         {/* Left Arrow */}
         {images.length > 5 && (

@@ -2,12 +2,9 @@ import React from 'react';
 import { useDrag } from 'react-dnd';
 import './PropertyCard.css';
 
-/**
- * PropertyCard Component
- * Individual property card with drag functionality
- */
+
 const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) => {
-  // Drag functionality for adding to favorites
+  
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'PROPERTY',
     item: property,
@@ -16,23 +13,14 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
     })
   }));
 
-  /**
-   * Format price with commas
-   */
   const formatPrice = (price) => {
     return `£${price.toLocaleString()}`;
   };
 
-  /**
-   * Format date for display
-   */
   const formatDate = (added) => {
     return `${added.month.substring(0, 3)} ${added.day}, ${added.year}`;
   };
 
-  /**
-   * Extract postcode from location
-   */
   const getPostcode = (location) => {
     const match = location.match(/([A-Z]{1,2}\d{1,2})/);
     return match ? match[0] : '';
@@ -101,14 +89,14 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
             className="btn-view"
             onClick={() => viewProperty(property)}
           >
-            👁️ View Details
+            View Details
           </button>
           <button
             className={`btn-favorite ${isFavorite ? 'active' : ''}`}
             onClick={() => addToFavorites(property)}
             disabled={isFavorite}
           >
-            {isFavorite ? '⭐ Added' : '⭐ Add to Favorites'}
+            {isFavorite ? '⭐ Added' : 'Add to Favorites'}
           </button>
         </div>
 
