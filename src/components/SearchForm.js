@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import './SearchForm.css';
 
-/**
- * SearchForm Component
- * Form with React-enhanced inputs for property search
- */
 const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
   const [formData, setFormData] = useState(searchCriteria);
 
-  /**
-   * Handle input changes
-   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -19,20 +12,15 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
     }));
   };
 
-  /**
-   * Handle form submission
-   */
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(formData);
   };
 
-  /**
-   * Handle reset
-   */
   const handleReset = () => {
     const emptyForm = {
-      type: '',
+      type: '', 
       minPrice: '',
       maxPrice: '',
       minBedrooms: '',
@@ -172,10 +160,10 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
       {/* Buttons */}
       <div className="form-actions">
         <button type="submit" className="btn btn-primary">
-          🔍 Search Properties
+            Search Properties
         </button>
         <button type="button" onClick={handleReset} className="btn btn-secondary">
-          🔄 Reset
+          Reset
         </button>
       </div>
     </form>

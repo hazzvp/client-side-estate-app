@@ -33,8 +33,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           <span className="location-icon"></span>
           {property.location}
         </div>
-
-        {/* Main Property Image - Smaller Width */}
+        
         <div className="detail-image-wrapper">
           <div className="detail-image">
             <img 
