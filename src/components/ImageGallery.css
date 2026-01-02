@@ -3,7 +3,6 @@
   margin-bottom: 2rem;
 }
 
-/* Main Image Container */
 .gallery-main {
   position: relative;
   width: 100%;
@@ -21,7 +20,6 @@
   display: block;
 }
 
-/* Image Counter */
 .gallery-counter {
   position: absolute;
   bottom: 20px;
@@ -35,15 +33,12 @@
   z-index: 5;
 }
 
-/* Gallery Title */
 .gallery-title {
   color: #333;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
-
-/* Thumbnails Wrapper with Arrows */
 .gallery-thumbnails-wrapper {
   display: flex;
   align-items: center;
@@ -51,7 +46,6 @@
   position: relative;
 }
 
-/* Thumbnail Arrow Buttons */
 .thumbnail-arrow {
   background-color: rgba(102, 126, 234, 0.9);
   color: white;
@@ -80,7 +74,6 @@
   transform: scale(0.95);
 }
 
-/* Thumbnails Container - Horizontal Single Line */
 .gallery-thumbnails {
   display: flex;
   gap: 1rem;
@@ -94,11 +87,10 @@
   flex: 1;
 }
 
-/* Individual Thumbnail - SMALLER SIZE */
 .thumbnail {
   flex-shrink: 0;
-  width: 100px;   /* Made smaller from 150px */
-  height: 70px;   /* Made smaller from 100px */
+  width: 100px;  
+  height: 70px;  
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -120,7 +112,6 @@
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* Active Thumbnail */
 .thumbnail-active {
   border-color: #667eea;
   box-shadow: 0 0 0 2px #667eea;
@@ -137,22 +128,20 @@
   pointer-events: none;
 }
 
-/* Responsive Design - Tablet */
 @media (max-width: 1024px) {
   .thumbnail {
-    width: 90px;   /* Smaller on tablet */
+    width: 90px;  
     height: 65px;
   }
 }
 
-/* Responsive Design - Mobile */
 @media (max-width: 768px) {
   .thumbnail {
-    width: 80px;   /* Smaller on mobile */
+    width: 80px;   
     height: 60px;
   }
 }
-/* Scrollbar Styling */
+
 .gallery-thumbnails::-webkit-scrollbar {
   height: 8px;
 }
@@ -171,7 +160,6 @@
   background: #5568d3;
 }
 
-/* Responsive Design - Tablet */
 @media (max-width: 1024px) {
   .gallery-main {
     height: 400px;
@@ -193,7 +181,6 @@
   }
 }
 
-/* Responsive Design - Mobile */
 @media (max-width: 768px) {
   .gallery-main {
     height: 300px;
@@ -230,7 +217,6 @@
     font-size: 1.2rem;
   }
 
-  /* Hide arrows on very small screens */
   @media (max-width: 480px) {
     .thumbnail-arrow {
       display: none;

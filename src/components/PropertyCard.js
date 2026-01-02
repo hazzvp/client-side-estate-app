@@ -32,7 +32,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
       className={`property-card ${isDragging ? 'dragging' : ''}`}
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
-      {/* Property Image */}
+  
       <div 
         className="property-image" 
         onClick={() => viewProperty(property)}
@@ -53,7 +53,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
         )}
       </div>
 
-      {/* Property Content */}
+  
       <div className="property-content">
         <div className="property-price">{formatPrice(property.price)}</div>
         <div className="property-location">{property.location}</div>
@@ -62,7 +62,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
           {property.description.substring(0, 100)}...
         </div>
 
-        {/* Property Details */}
+
         <div className="property-details">
           <div className="property-detail-item">
             <span className="detail-icon"></span>
@@ -82,7 +82,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
           <div className="postcode-badge">{getPostcode(property.location)}</div>
         )}
 
-        {/* Actions */}
+       
         <div className="property-actions">
           <button
             className="btn-view"
@@ -99,7 +99,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
           </button>
         </div>
 
-        {/* Drag Hint */}
+   
         <div className="drag-hint">
           Drag to favorites or click button
         </div>

@@ -6,7 +6,6 @@ const PropertyList = ({ properties, addToFavorites, viewProperty, favorites }) =
   if (properties.length === 0) {
     return (
       <div className="no-results">
-        <div className="no-results-icon">🔍</div>
         <h3>No properties found</h3>
         <p>Try adjusting your search criteria</p>
       </div>

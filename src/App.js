@@ -45,7 +45,7 @@ function App() {
         <header className="App-header">
           <div className="header-content">
 
-            {/* Logo on the top-left */}
+     
             <img
               src={logo}
               alt="Estate Agent Logo"

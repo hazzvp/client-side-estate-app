@@ -1,22 +1,48 @@
-import React from 'react';
-import ImageGallery from './ImageGallery';
+import React, { useState } from 'react';
 import './PropertyDetail.css';
 
 const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   if (!property) {
     return <div>Property not found</div>;
   }
+  const propNumber = property.id.replace('prop', '');
+  
+  const TOTAL_IMAGES = 7;
+
+  const getCurrentImagePath = () => {
+    if (currentImageIndex === 0) {
+      
+      return `Images/properties/prop${propNumber}/image${propNumber}.jpg`;
+    } else {
+      
+      return `Images/properties/prop${propNumber}/img${propNumber}-${currentImageIndex}.jpg`;
+    }
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev < TOTAL_IMAGES - 1 ? prev + 1 : 0
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev > 0 ? prev - 1 : TOTAL_IMAGES - 1
+    );
+  };
 
   const formatPrice = (price) => {
     return `Rs ${price.toLocaleString()}`;
   };
 
-  const galleryImages = property.images ? property.images.slice(1) : [];
+  const currentImagePath = getCurrentImagePath();
 
   return (
     <div className="property-detail">
       <div className="detail-container">
-        {/* Header */}
+     
         <div className="detail-header">
           <h1>{formatPrice(property.price)}</h1>
           <button
@@ -28,37 +54,72 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </button>
         </div>
 
-        {/* Location */}
         <div className="detail-location">
           <span className="location-icon"></span>
           {property.location}
         </div>
-        
-        <div className="detail-image-wrapper">
-          <div className="detail-image">
-            <img 
-              src={`${process.env.PUBLIC_URL}/${property.picture}`} 
-              alt={property.location}
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/800x600?text=Image+Not+Found';
-              }}
-            />
+
+        <div className="detail-main-info">
+          <div className="info-badge">
+            <span className="badge-icon"></span>
+            {property.type}
+          </div>
+          <div className="info-badge">
+            <span className="badge-icon"></span>
+            {property.bedrooms} Bedrooms
+          </div>
+          <div className="info-badge">
+            <span className="badge-icon"></span>
+            {property.tenure}
           </div>
         </div>
 
-        {galleryImages.length > 0 && (
-          <div className="detail-gallery-section">
-            <ImageGallery images={galleryImages} />
-          </div>
-        )}
+        <div className="detail-image-container">
+          <h2>Property Images</h2>
+          <div className="detail-main-image">
+            <img 
+              src={`${process.env.PUBLIC_URL}/${currentImagePath}`}
+              alt={`Property view ${currentImageIndex + 1}`}
+              onError={(e) => {
+                console.error('Failed to load:', currentImagePath);
+                e.target.src = 'https://via.placeholder.com/1200x800?text=Image+Not+Found';
+              }}
+              onLoad={() => {
+                console.log('Loaded:', currentImagePath);
+              }}
+            />
+            
+            <button 
+              className="image-nav-arrow image-nav-left" 
+              onClick={prevImage}
+              aria-label="Previous image"
+            >
+              ❮
+            </button>
+            <button 
+              className="image-nav-arrow image-nav-right" 
+              onClick={nextImage}
+              aria-label="Next image"
+            >
+              ❯
+            </button>
 
-        {/* Description */}
+            <div className="image-counter">
+              {currentImageIndex + 1} / {TOTAL_IMAGES}
+            </div>
+
+            <div className="image-label">
+              {currentImageIndex === 0 ? 'Exterior' : `Interior ${currentImageIndex}`}
+            </div>
+          </div>
+        </div>
+
+     
         <div className="detail-description">
           <h2>Description</h2>
           <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
         </div>
 
-        {/* Location Map */}
         <div className="detail-map">
           <h2>Location Map</h2>
           <iframe
@@ -72,7 +133,6 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           ></iframe>
         </div>
 
-        {/* Floor Plan */}
         <div className="detail-floorplan">
           <h2>Floor Plan</h2>
           {property.floorPlan ? (
@@ -81,6 +141,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
               alt="Floor Plan"
               className="floorplan-image"
               onError={(e) => {
+                console.error('Failed to load floor plan:', property.floorPlan);
                 e.target.src = 'https://via.placeholder.com/600x400?text=Floor+Plan+Not+Available';
               }}
             />
@@ -89,7 +150,6 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           )}
         </div>
 
-        {/* Date Added */}
         <div className="detail-added">
           <strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}
         </div>

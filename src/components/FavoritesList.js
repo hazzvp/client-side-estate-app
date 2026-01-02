@@ -29,19 +29,17 @@ const FavoritesList = ({
   return (
     <div className="favorites-list">
       <div className="favorites-header">
-        <h3>⭐ My Favorites ({favorites.length})</h3>
+        <h3>My Favorites ({favorites.length})</h3>
       </div>
 
-      {/* Drop Zone */}
       <div
         ref={drop}
         className={`favorites-drop-zone ${isOver ? 'drag-over' : ''}`}
       >
         {favorites.length === 0 ? (
           <div className="drop-zone-empty">
-            <div className="drop-icon">🎯</div>
             <p>Drag properties here</p>
-            <p className="drop-hint">or click ⭐ button</p>
+            <p className="drop-hint">or click button</p>
           </div>
         ) : (
           <div className="favorites-items">
@@ -66,23 +64,16 @@ const FavoritesList = ({
                     </p>
                   </div>
                 </div>
-                <button
-                  className="btn-remove"
-                  onClick={() => removeFromFavorites(property.id)}
-                  title="Remove from favorites"
-                >
-                  🗑️
-                </button>
+                
               </div>
             ))}
           </div>
         )}
       </div>
 
-      {/* Clear All Button */}
       {favorites.length > 0 && (
         <button className="btn-clear-all" onClick={clearFavorites}>
-          🗑️ Clear All Favorites
+          Clear All Favorites
         </button>
       )}
     </div>

@@ -82,7 +82,6 @@
   background-color: #d0d0d0;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;

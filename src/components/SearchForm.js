@@ -36,7 +36,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <div className="form-grid">
-        {/* Property Type */}
+     
         <div className="form-group">
           <label htmlFor="type">Property Type</label>
           <select
@@ -52,7 +52,6 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           </select>
         </div>
 
-        {/* Min Price */}
         <div className="form-group">
           <label htmlFor="minPrice">Min Price (£)</label>
           <input
@@ -68,7 +67,6 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           />
         </div>
 
-        {/* Max Price */}
         <div className="form-group">
           <label htmlFor="maxPrice">Max Price (£)</label>
           <input
@@ -84,7 +82,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           />
         </div>
 
-        {/* Min Bedrooms */}
+        
         <div className="form-group">
           <label htmlFor="minBedrooms">Min Bedrooms</label>
           <input
@@ -100,7 +98,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           />
         </div>
 
-        {/* Max Bedrooms */}
+     
         <div className="form-group">
           <label htmlFor="maxBedrooms">Max Bedrooms</label>
           <input
@@ -116,7 +114,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           />
         </div>
 
-        {/* Date From */}
+       
         <div className="form-group">
           <label htmlFor="dateFrom">Date Added From</label>
           <input
@@ -129,7 +127,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           />
         </div>
 
-        {/* Date To */}
+    
         <div className="form-group">
           <label htmlFor="dateTo">Date Added To</label>
           <input
@@ -142,7 +140,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
           />
         </div>
 
-        {/* Postcode */}
+      
         <div className="form-group">
           <label htmlFor="postcode">Postcode Area</label>
           <input
@@ -157,7 +155,7 @@ const SearchForm = ({ onSearch, onReset, searchCriteria }) => {
         </div>
       </div>
 
-      {/* Buttons */}
+ 
       <div className="form-actions">
         <button type="submit" className="btn btn-primary">
             Search Properties

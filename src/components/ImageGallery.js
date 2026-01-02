@@ -26,7 +26,7 @@ const ImageGallery = ({ images }) => {
 
   return (
     <div className="image-gallery">
-      {/* Main Image Display */}
+
       <div className="gallery-main">
         <img 
           src={`${process.env.PUBLIC_URL}/${images[currentIndex]}`}
@@ -37,17 +37,15 @@ const ImageGallery = ({ images }) => {
           }}
         />
         
-        {/* Image Counter */}
         <div className="gallery-counter">
           {currentIndex + 1} / {images.length}
         </div>
       </div>
 
-      {/* Gallery Title */}
       <h3 className="gallery-title">Gallery</h3>
 
       <div className="gallery-thumbnails-wrapper">
-        {/* Left Arrow */}
+     
         {images.length > 5 && (
           <button 
             className="thumbnail-arrow thumbnail-arrow-left" 
@@ -58,7 +56,7 @@ const ImageGallery = ({ images }) => {
           </button>
         )}
 
-        {/* Thumbnails Container */}
+
         <div className="gallery-thumbnails">
           {images.map((image, index) => (
             <div
@@ -77,7 +75,6 @@ const ImageGallery = ({ images }) => {
           ))}
         </div>
 
-        {/* Right Arrow */}
         {images.length > 5 && (
           <button 
             className="thumbnail-arrow thumbnail-arrow-right" 

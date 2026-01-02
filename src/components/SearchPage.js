@@ -13,7 +13,7 @@ const SearchPage = ({
   clearFavorites,
   viewProperty
 }) => {
-  // State for search criteria
+  
   const [searchCriteria, setSearchCriteria] = useState({
     type: '',
     minPrice: '',
@@ -25,13 +25,11 @@ const SearchPage = ({
     postcode: ''
   });
 
-  // State for filtered results
+  
   const [filteredProperties, setFilteredProperties] = useState(properties);
   const [hasSearched, setHasSearched] = useState(false);
 
-  /**
-   * Convert property date object to Date for comparison
-   */
+  
   const getPropertyDate = (added) => {
     const monthMap = {
       'January': 0, 'February': 1, 'March': 2, 'April': 3,
@@ -41,23 +39,20 @@ const SearchPage = ({
     return new Date(added.year, monthMap[added.month], added.day);
   };
 
-  /**
-   * Filter properties based on search criteria
-   * Supports any combination of 1-5 criteria
-   */
+  
   const handleSearch = (criteria) => {
     setSearchCriteria(criteria);
     setHasSearched(true);
 
     const filtered = properties.filter(property => {
-      // Type filter (case-insensitive)
+      
       if (criteria.type && criteria.type !== 'any') {
         if (property.type.toLowerCase() !== criteria.type.toLowerCase()) {
           return false;
         }
       }
 
-      // Price filters
+  
       if (criteria.minPrice && property.price < parseFloat(criteria.minPrice)) {
         return false;
       }
@@ -65,7 +60,7 @@ const SearchPage = ({
         return false;
       }
 
-      // Bedroom filters
+    
       if (criteria.minBedrooms && property.bedrooms < parseInt(criteria.minBedrooms)) {
         return false;
       }
@@ -73,7 +68,7 @@ const SearchPage = ({
         return false;
       }
 
-      // Date filters
+    
       if (criteria.dateFrom || criteria.dateTo) {
         const propertyDate = getPropertyDate(property.added);
         
@@ -92,7 +87,7 @@ const SearchPage = ({
         }
       }
 
-      // Postcode filter (extract postcode area from location)
+     
       if (criteria.postcode) {
         const locationUpper = property.location.toUpperCase();
         const postcodeUpper = criteria.postcode.toUpperCase();
@@ -107,9 +102,7 @@ const SearchPage = ({
     setFilteredProperties(filtered);
   };
 
-  /**
-   * Reset search and show all properties
-   */
+ 
   const handleReset = () => {
     setSearchCriteria({
       type: '',
@@ -127,7 +120,7 @@ const SearchPage = ({
 
   return (
     <div className="search-page">
-      {/* Search Form Section */}
+      
       <section className="search-section">
         <h2>Search Properties</h2>
         <SearchForm
@@ -137,9 +130,9 @@ const SearchPage = ({
         />
       </section>
 
-      {/* Main Content: Results and Favorites */}
+     
       <div className="content-grid">
-        {/* Search Results */}
+        
         <section className="results-section">
           <div className="results-header">
             <h2>
@@ -156,7 +149,7 @@ const SearchPage = ({
           />
         </section>
 
-        {/* Favorites Sidebar */}
+        
         <aside className="favorites-section">
           <FavoritesList
             favorites={favorites}
