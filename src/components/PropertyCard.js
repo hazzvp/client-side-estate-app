@@ -14,7 +14,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
   }));
 
   const formatPrice = (price) => {
-    return `£${price.toLocaleString()}`;
+    return `Rs ${price.toLocaleString()}`;
   };
 
   const formatDate = (added) => {
@@ -101,7 +101,7 @@ const PropertyCard = ({ property, addToFavorites, viewProperty, isFavorite }) =>
 
    
         <div className="drag-hint">
-          Drag to favorites or click button
+          Drag to favorites or click the button
         </div>
       </div>
     </div>

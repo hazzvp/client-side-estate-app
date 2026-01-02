@@ -37,10 +37,10 @@ const FavoritesList = ({
         className={`favorites-drop-zone ${isOver ? 'drag-over' : ''}`}
       >
         {favorites.length === 0 ? (
-          <div className="drop-zone-empty">
-            <p>Drag properties here</p>
-            <p className="drop-hint">or click button</p>
-          </div>
+            <div className="drop-zone-empty">
+            <p>No saved properties</p>
+            <p className="drop-hint">Click "Add to Favorites" to save properties here</p>
+            </div>
         ) : (
           <div className="favorites-items">
             {favorites.map(property => (
