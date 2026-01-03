@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import './PropertyDetail.css';
+
 
 const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -7,16 +10,14 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   if (!property) {
     return <div>Property not found</div>;
   }
+
   const propNumber = property.id.replace('prop', '');
-  
   const TOTAL_IMAGES = 7;
 
   const getCurrentImagePath = () => {
     if (currentImageIndex === 0) {
-      
       return `Images/properties/prop${propNumber}/image${propNumber}.jpg`;
     } else {
-      
       return `Images/properties/prop${propNumber}/img${propNumber}-${currentImageIndex}.jpg`;
     }
   };
@@ -42,7 +43,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
   return (
     <div className="property-detail">
       <div className="detail-container">
-     
+        
         <div className="detail-header">
           <h1>{formatPrice(property.price)}</h1>
           <button
@@ -54,11 +55,13 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </button>
         </div>
 
+      
         <div className="detail-location">
-          <span className="location-icon"></span>
+          
           {property.location}
         </div>
 
+        
         <div className="detail-main-info">
           <div className="info-badge">
             <span className="badge-icon"></span>
@@ -74,6 +77,7 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
           </div>
         </div>
 
+       
         <div className="detail-image-container">
           <h2>Property Images</h2>
           <div className="detail-main-image">
@@ -84,11 +88,9 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
                 console.error('Failed to load:', currentImagePath);
                 e.target.src = 'https://via.placeholder.com/1200x800?text=Image+Not+Found';
               }}
-              onLoad={() => {
-                console.log('Loaded:', currentImagePath);
-              }}
             />
             
+           
             <button 
               className="image-nav-arrow image-nav-left" 
               onClick={prevImage}
@@ -104,50 +106,63 @@ const PropertyDetail = ({ property, addToFavorites, isFavorite }) => {
               ❯
             </button>
 
+            
             <div className="image-counter">
               {currentImageIndex + 1} / {TOTAL_IMAGES}
-            </div>
-
-            <div className="image-label">
-              {currentImageIndex === 0 ? 'Exterior' : `Interior ${currentImageIndex}`}
             </div>
           </div>
         </div>
 
-     
-        <div className="detail-description">
-          <h2>Description</h2>
-          <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
-        </div>
+        <div className="detail-tabs-container">
+          <Tabs>
+            <TabList>
+              <Tab>Description</Tab>
+              <Tab>Floor Plan</Tab>
+              <Tab>Location Map</Tab>
+            </TabList>
 
-        <div className="detail-map">
-          <h2>Location Map</h2>
-          <iframe
-            title="property-map"
-            src={`https://www.google.com/maps?q=${property.latitude},${property.longitude}&output=embed`}
-            width="100%"
-            height="400"
-            style={{ border: 0, borderRadius: '12px' }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+        
+            <TabPanel>
+              <div className="tab-content">
+                <h2>Property Description</h2>
+                <p dangerouslySetInnerHTML={{ __html: property.description }}></p>
+              </div>
+            </TabPanel>
 
-        <div className="detail-floorplan">
-          <h2>Floor Plan</h2>
-          {property.floorPlan ? (
-            <img
-              src={`${process.env.PUBLIC_URL}/${property.floorPlan}`}
-              alt="Floor Plan"
-              className="floorplan-image"
-              onError={(e) => {
-                console.error('Failed to load floor plan:', property.floorPlan);
-                e.target.src = 'https://via.placeholder.com/600x400?text=Floor+Plan+Not+Available';
-              }}
-            />
-          ) : (
-            <p>No floor plan available.</p>
-          )}
+            <TabPanel>
+              <div className="tab-content">
+                <h2>Floor Plan</h2>
+                {property.floorPlan ? (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/${property.floorPlan}`}
+                    alt="Floor Plan"
+                    className="floorplan-image"
+                    onError={(e) => {
+                      e.target.src = 'https://via.placeholder.com/600x400?text=Floor+Plan+Not+Available';
+                    }}
+                  />
+                ) : (
+                  <p>No floor plan available.</p>
+                )}
+              </div>
+            </TabPanel>
+
+      
+            <TabPanel>
+              <div className="tab-content">
+                <h2>Location</h2>
+                <iframe
+                  title="property-map"
+                  src={`https://www.google.com/maps?q=${property.latitude},${property.longitude}&output=embed`}
+                  width="100%"
+                  height="450"
+                  style={{ border: 0, borderRadius: '12px' }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </TabPanel>
+          </Tabs>
         </div>
 
         <div className="detail-added">
