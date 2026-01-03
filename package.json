@@ -1,8 +1,8 @@
 {
-  "name": "estate-agent-app",
+  "name": "client-side-estate-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yourusername.github.io/estate-agent-app",
+  "homepage": "https://github.com/hazzvp/client-side-estate-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -19,7 +19,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
