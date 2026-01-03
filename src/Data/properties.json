@@ -107,7 +107,7 @@
         "/Images/properties/prop4/img4-4.jpg",
         "/Images/properties/prop4/img4-5.jpg"
       ],
-      "floorPlan": "/Images/properties/prop4/floorPlan4.jpg",
+      "floorPlan": "/Images/properties/prop4/floorPlan4.avif",
       "latitude": 6.8549,
       "longitude": 79.8658
     },
@@ -163,7 +163,7 @@
         "/Images/properties/prop6/img6-5.jpg",
         "/Images/properties/prop6/img6-6.jpg"
       ],
-      "floorPlan": "/Images/properties/prop6/floorPlan6.jpg",
+      "floorPlan": "/Images/properties/prop6/floorPlan6.jpeg",
       "latitude": 6.9271,
       "longitude": 79.8477
     },
@@ -191,7 +191,7 @@
         "/Images/properties/prop7/img7-5.jpg",
         "/Images/properties/prop7/img7-6.jpg"
       ],
-      "floorPlan": "/Images/properties/prop7/floorPlan7.jpg",
+      "floorPlan": "/Images/properties/prop7/floorPlan7.png",
       "latitude": 7.2906,
       "longitude": 80.6337
     }
