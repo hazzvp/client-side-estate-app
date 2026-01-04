@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hazzvp/client-side-estate-app/static/css/main.bf4fcf77.css",
-    "main.js": "/hazzvp/client-side-estate-app/static/js/main.7cc7cadb.js",
-    "static/js/453.71735f7e.chunk.js": "/hazzvp/client-side-estate-app/static/js/453.71735f7e.chunk.js",
-    "static/media/logo2.png": "/hazzvp/client-side-estate-app/static/media/logo2.8f7b4861b783b4683e49.png",
-    "index.html": "/hazzvp/client-side-estate-app/index.html",
-    "main.bf4fcf77.css.map": "/hazzvp/client-side-estate-app/static/css/main.bf4fcf77.css.map",
-    "main.7cc7cadb.js.map": "/hazzvp/client-side-estate-app/static/js/main.7cc7cadb.js.map",
-    "453.71735f7e.chunk.js.map": "/hazzvp/client-side-estate-app/static/js/453.71735f7e.chunk.js.map"
+    "main.css": "/client-side-estate-app/static/css/main.bf4fcf77.css",
+    "main.js": "/client-side-estate-app/static/js/main.002c5287.js",
+    "static/js/453.71735f7e.chunk.js": "/client-side-estate-app/static/js/453.71735f7e.chunk.js",
+    "static/media/logo2.png": "/client-side-estate-app/static/media/logo2.8f7b4861b783b4683e49.png",
+    "index.html": "/client-side-estate-app/index.html",
+    "main.bf4fcf77.css.map": "/client-side-estate-app/static/css/main.bf4fcf77.css.map",
+    "main.002c5287.js.map": "/client-side-estate-app/static/js/main.002c5287.js.map",
+    "453.71735f7e.chunk.js.map": "/client-side-estate-app/static/js/453.71735f7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bf4fcf77.css",
-    "static/js/main.7cc7cadb.js"
+    "static/js/main.002c5287.js"
   ]
 }
