@@ -90,7 +90,7 @@ function App() {
         </main>
 
         <footer className="App-footer">
-          <p>© 2025 Estate Agent App - University of Westminster</p>
+          <p>© 2025 Estate Agent App - Developed by Hasandi Peiris - University of Westminster</p>
         </footer>
       </div>
     </DndProvider>
